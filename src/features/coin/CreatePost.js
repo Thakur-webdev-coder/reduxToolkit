@@ -27,7 +27,7 @@ const CreatePost = ({route, navigation}) => {
         <Text style={styles.text1}>User Data</Text>
       </View>
       <View style={styles.internalarea}>
-        <Text style={styles.dataText}>User Details</Text>
+        <Text style={styles.dataText}>User Detail</Text>
         <View style={styles.internalfiled}>
           <Text style={styles.dataText}>userId:{userId}</Text>
           <Text style={styles.dataText}>id:{id}</Text>
