@@ -8,6 +8,7 @@ import ApiwithRedux from './src/features/coin/ApiwithRedux';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CreatePost from './src/features/coin/CreatePost';
+import Edituser from './src/features/coin/Edituser';
 // import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createNativeStackNavigator();
@@ -20,6 +21,7 @@ const App = () => {
         screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={ApiwithRedux} />
         <Stack.Screen name="CreatePost" component={CreatePost} />
+        <Stack.Screen name="Edit" component={Edituser} />
       </Stack.Navigator>
     </NavigationContainer>
   );

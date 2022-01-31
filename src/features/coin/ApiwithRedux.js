@@ -13,6 +13,7 @@ import {apiLists} from '../PostSliceExample';
 
 const ApiwithRedux = ({navigation}) => {
   //  const [isError, setIsError] = useState(null);
+  // const [getPost, setgetPost] = useState(initialState)
   const [loader, setloader] = useState(true);
   const [id, setId] = useState('');
   const [isFetching, setisFetching] = useState(false);
@@ -42,7 +43,15 @@ const ApiwithRedux = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.text1}>Api with Redux</Text>
+        <View>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => navigation.navigate('Edit', {id: id})}>
+            <Text style={styles.btntext}>Edit</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+
       <View>
         {error ? (
           <Text>Something Went Wrong</Text>
@@ -68,8 +77,9 @@ const ApiwithRedux = ({navigation}) => {
                           onPress={() =>
                             navigation.navigate('CreatePost', {
                               id: item.id,
-                              userId: item.userId,
-                              title: item.title,
+                              // userId: item.userId,
+                              // title: item.title,
+                              // body: item.body,
                             })
                           }>
                           <Text style={styles.text}>{item.id}</Text>
@@ -118,7 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     // justifyContent: 'center',
     flexDirection: 'row',
-    paddingLeft: '30%',
+    paddingLeft: '20%',
   },
   text1: {
     textAlign: 'center',
@@ -141,7 +151,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   btn: {
-    marginLeft: '20%',
+    marginLeft: '50%',
     marginTop: 10,
+    // paddingLeft: 60,
+    backgroundColor: 'yellow',
+    alignItems: 'center',
+    width: '30%',
+  },
+  btntext: {
+    color: 'black',
+    fontSize: 18,
   },
 });
